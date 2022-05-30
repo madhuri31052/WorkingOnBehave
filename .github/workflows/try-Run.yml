@@ -2,8 +2,23 @@ name: try-github-actions
 on:
  workflow_dispatch:
 jobs:
-  run-behave-test-scripts:
-    runs-on: windows
+  build:
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: behave
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+          run: |
+            python -m pip install --upgrade pip
+            pip install behave
+            pip install selenium
+            pip install chromedriver
+            pip install webdriver-manager
+          ref: # branch
+            my_other_branch
+      - name: run behave file
+        run: |
+          behave
