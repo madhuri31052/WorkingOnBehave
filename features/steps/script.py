@@ -5,7 +5,7 @@ import os
 
 @given('Launch Chrome Browser')
 def LaunchChrome(context):
-    context.driver=webdriver.Chrome(executable_path="C:\\Program Files\\chromedriver.exe")
+    context.driver=webdriver.Chrome(executable_path="C:/path/to/chromedriver.exe")
     context.driver.maximize_window()
     time.sleep(5)
 
