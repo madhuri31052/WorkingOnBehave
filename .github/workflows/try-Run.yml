@@ -22,5 +22,5 @@ jobs:
             my_other_branch
       - name: run behave file
         run: |
-          behave ./features/test.feature
+          behave 
 
