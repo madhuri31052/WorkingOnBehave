@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v3 # checkout the repository content to github runner.
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
       - name: setup python
         uses: actions/setup-python@v3
         with:
@@ -18,8 +18,6 @@ jobs:
             pip install selenium
             pip install chromedriver
             pip install webdriver-manager
-          ref: # branch
-            my_other_branch
       - name: run behave file
         run: |
           behave 
