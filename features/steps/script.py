@@ -115,3 +115,5 @@ def sortIcon(context):
     context.driver.find_element_by_xpath("//body/div[@id='root']/div[1]/div[2]/div[1]/div[2]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]").is_displayed()
     assert True
     context.driver.close()
+
+print("Successful")
