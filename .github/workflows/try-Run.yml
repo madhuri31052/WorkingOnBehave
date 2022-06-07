@@ -26,8 +26,9 @@ jobs:
         pip install chromedriver
         pip install webdriver-manager
     - name: run behave file
+      env:
+        EMAIL_DB : ${{ secrets.EMAIL_DB }}
+        PASS_DB : ${{ secrets.PASS_DB }}
       run: |
         behave 
-      env:
-        EMAIL_TOKEN : ${{ secrets.EMAIL_DB }}
-        PASS_TOKEN : ${{ secrets.PASS_DB }}
+      
