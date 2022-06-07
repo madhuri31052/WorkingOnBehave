@@ -28,3 +28,6 @@ jobs:
     - name: run behave file
       run: |
         behave 
+      env:
+        EMAIL_TOKEN : ${{ secrets.EMAIL_DB }}
+        PASS_TOKEN : ${{ secrets.PASS_DB }}

@@ -21,13 +21,13 @@ def EnterCred(context, email, pwd):
     context.driver.find_element_by_id("password").send_keys(pwd)
     time.sleep(5)
 
-# email = os.environ.get('Email_DB')
-# pwd = os.environ.get('Pass_DB')
+email = os.environ.get('Email_DB')
+pwd = os.environ.get('Pass_DB')
 
 @when('Enter Email_DB and Pass_DB')
 def EnterCred(context):
-    context.driver.find_element_by_id("username").send_keys("mleela.madhuri@strongarmtech.com")
-    context.driver.find_element_by_id("password").send_keys("qaAccess@491")
+    context.driver.find_element_by_id("username").send_keys(email)
+    context.driver.find_element_by_id("password").send_keys(pwd)
     time.sleep(5)
 
 @when('Click on login button')
