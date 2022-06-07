@@ -3,7 +3,10 @@
 
 name: try-github-actions
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build:
     runs-on: windows-latest
@@ -23,5 +26,9 @@ jobs:
         pip install chromedriver
         pip install webdriver-manager
     - name: run behave file
+      env:
+        EMAIL_DB : ${{ secrets.EMAIL_DB }}
+        PASS_DB : ${{ secrets.PASS_DB }}
       run: |
         behave 
+      
